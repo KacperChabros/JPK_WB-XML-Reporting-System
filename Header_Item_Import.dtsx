@@ -1,0 +1,1567 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/30/2025 10:29:10 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MyComputer"
+  DTS:CreatorName="MyComputer\MyUser"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{37FA562C-97B9-40CB-832F-42380B3B99D9}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="2057"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="Header_Item_Import"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{11EE9AE1-1AEB-46EA-9099-A31A91E283C6}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{BD374B3A-7960-4D28-ABF3-7317CDDA341D}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=[serverName];User ID=&quot;&quot;;Initial Catalog=[database];Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Persist Security Info=False;Initial File Name=&quot;&quot;;Server SPN=&quot;&quot;;Authentication=&quot;&quot;;Access Token=&quot;&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F72A992B-9162-4618-8C44-AB3BC3DC3596}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="PathTo_item.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Entity"
+              DTS:DTSID="{67325CD2-51D4-4E9C-8F2D-EFA82DB8664F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="34"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account_Number"
+              DTS:DTSID="{A1C99E3B-40DB-4475-A354-4E9872D3A22E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="For_Month"
+              DTS:DTSID="{5D6B21BF-B156-4371-A067-61185721D488}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date"
+              DTS:DTSID="{620BEF2E-E854-4BF8-9C3C-002F0AB90BC1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction_Party"
+              DTS:DTSID="{27B2228A-9A0C-456C-A1F0-5FCFF657392B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="200"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Description"
+              DTS:DTSID="{3A1FAF73-B0CD-4A13-9029-29FAF850030F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Amount"
+              DTS:DTSID="{DC7E1429-DE05-42D8-8083-8D1E7329F252}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Balance"
+              DTS:DTSID="{5C62910A-558C-4040-8852-A3567B976795}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3D96F255-8CD4-4DE3-8A14-D14807B0DE00}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="2057"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="PathTo_header.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Entity"
+              DTS:DTSID="{1C0BB7D4-CE9B-4DCA-98AF-347B24B5F67C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="34"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Account_Number"
+              DTS:DTSID="{7909A088-007E-496A-B818-C9289470C97F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="6"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="For_Month"
+              DTS:DTSID="{43ACC3CE-93FC-495B-B632-6F1A9B1633F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="3"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Currency_Code"
+              DTS:DTSID="{AB5C52C4-8485-44DC-8349-FC81840E3063}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Opening_Balance"
+              DTS:DTSID="{4A695A6D-08BF-4752-99EF-4FF68C0ED7A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Closing_Balance"
+              DTS:DTSID="{FFF09A87-91DB-4137-8B1D-08AFF9CAA9B1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Clear_Header_Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{B41DE984-C384-4AAC-9537-B3D53968AAE7}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear_Header_Staging"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BD374B3A-7960-4D28-ABF3-7317CDDA341D}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[Header_Staging]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Clear_Item_Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{ceb20cff-4fc0-4ee6-8679-b8cb52716a90}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Clear_Item_Staging"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BD374B3A-7960-4D28-ABF3-7317CDDA341D}"
+          SQLTask:SqlStatementSource="DELETE FROM [dbo].[Item_Staging]&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete_header_txt"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{B03081AB-5406-4356-A2B7-EC258396C3E9}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete_header_txt"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{3D96F255-8CD4-4DE3-8A14-D14807B0DE00}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Delete_item_txt"
+      DTS:CreationName="Microsoft.FileSystemTask"
+      DTS:Description="File System Task"
+      DTS:DTSID="{b8192676-f6a5-418c-8c3e-faecf4df1382}"
+      DTS:ExecutableType="Microsoft.FileSystemTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete_item_txt"
+      DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <FileSystemData
+          TaskOperationType="DeleteFile"
+          TaskSourcePath="{F72A992B-9162-4618-8C44-AB3BC3DC3596}" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert_To_Header_Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{15DFA757-9AE5-4689-8FBB-024DCCFC1887}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert_To_Header_Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert_To_Header_Staging\Destination - Header_Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Header_Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Header_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Entity]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Entity"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Entity]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Entity]" />
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Account_Number]"
+                      cachedDataType="wstr"
+                      cachedLength="34"
+                      cachedName="Account_Number"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Account_Number]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Account_Number]" />
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[For_Month]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="For_Month"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[For_Month]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[For_Month]" />
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Currency_Code]"
+                      cachedDataType="wstr"
+                      cachedLength="3"
+                      cachedName="Currency_Code"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Currency_Code]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Currency_Code]" />
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Opening_Balance]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Opening_Balance"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Opening_Balance]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Opening_Balance]" />
+                    <inputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Closing_Balance]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Closing_Balance"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Closing_Balance]"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Closing_Balance]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Entity]"
+                      dataType="wstr"
+                      length="10"
+                      name="Entity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Account_Number]"
+                      dataType="wstr"
+                      length="34"
+                      name="Account_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[For_Month]"
+                      dataType="wstr"
+                      length="6"
+                      name="For_Month" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Currency_Code]"
+                      dataType="wstr"
+                      length="3"
+                      name="Currency_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Opening_Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Opening_Balance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Closing_Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Closing_Balance" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert_To_Header_Staging\Source - header_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Source - header_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert_To_Header_Staging\Source - header_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Entity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Entity]"
+                      length="10"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Entity]"
+                      name="Entity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Account_Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Account_Number]"
+                      length="34"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Account_Number]"
+                      name="Account_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[For_Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[For_Month]"
+                      length="6"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[For_Month]"
+                      name="For_Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Currency_Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Currency_Code]"
+                      length="3"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Currency_Code]"
+                      name="Currency_Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Opening_Balance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Opening_Balance]"
+                      length="30"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Opening_Balance]"
+                      name="Opening_Balance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Closing_Balance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Closing_Balance]"
+                      length="30"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].Columns[Closing_Balance]"
+                      name="Closing_Balance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Entity]"
+                      dataType="wstr"
+                      length="10"
+                      name="Entity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Account_Number]"
+                      dataType="wstr"
+                      length="34"
+                      name="Account_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[For_Month]"
+                      dataType="wstr"
+                      length="6"
+                      name="For_Month" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Currency_Code]"
+                      dataType="wstr"
+                      length="3"
+                      name="Currency_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Opening_Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Opening_Balance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output].ExternalColumns[Closing_Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Closing_Balance" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert_To_Header_Staging.Paths[Flat File Source Output]"
+              endId="Package\Insert_To_Header_Staging\Destination - Header_Staging.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert_To_Header_Staging\Source - header_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert_to_Item_Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DTSID="{3401e099-c2e9-4ad3-b876-4e2275ef89c8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert_to_Item_Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert_to_Item_Staging\Destination - Header_Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - Header_Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Item_Staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Entity]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Entity"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Entity]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Entity]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Account_Number]"
+                      cachedDataType="wstr"
+                      cachedLength="34"
+                      cachedName="Account_Number"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Account_Number]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Account_Number]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[For_Month]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="For_Month"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[For_Month]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[For_Month]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Date]"
+                      cachedDataType="wstr"
+                      cachedLength="10"
+                      cachedName="Date"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Date]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Date]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Transaction_Party]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Transaction_Party"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Transaction_Party]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Transaction_Party]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Amount]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Amount"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Amount]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Amount]" />
+                    <inputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].Columns[Balance]"
+                      cachedDataType="wstr"
+                      cachedLength="30"
+                      cachedName="Balance"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Balance]"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Balance]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Entity]"
+                      dataType="wstr"
+                      length="10"
+                      name="Entity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Account_Number]"
+                      dataType="wstr"
+                      length="34"
+                      name="Account_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[For_Month]"
+                      dataType="wstr"
+                      length="6"
+                      name="For_Month" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Transaction_Party]"
+                      dataType="wstr"
+                      length="200"
+                      name="Transaction_Party" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="200"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Amount]"
+                      dataType="wstr"
+                      length="30"
+                      name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input].ExternalColumns[Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Balance" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert_to_Item_Staging\Source - item_txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="2057"
+              name="Source - item_txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert_to_Item_Staging\Source - item_txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Entity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Entity]"
+                      length="10"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Entity]"
+                      name="Entity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Account_Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Account_Number]"
+                      length="34"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Account_Number]"
+                      name="Account_Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[For_Month]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[For_Month]"
+                      length="6"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[For_Month]"
+                      name="For_Month"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      length="10"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Date]"
+                      name="Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Transaction_Party]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Transaction_Party]"
+                      length="200"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Transaction_Party]"
+                      name="Transaction_Party"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      length="200"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Amount]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Amount]"
+                      length="30"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Amount]"
+                      name="Amount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Balance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Balance]"
+                      length="30"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].Columns[Balance]"
+                      name="Balance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Entity]"
+                      dataType="wstr"
+                      length="10"
+                      name="Entity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Account_Number]"
+                      dataType="wstr"
+                      length="34"
+                      name="Account_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[For_Month]"
+                      dataType="wstr"
+                      length="6"
+                      name="For_Month" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Date]"
+                      dataType="wstr"
+                      length="10"
+                      name="Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Transaction_Party]"
+                      dataType="wstr"
+                      length="200"
+                      name="Transaction_Party" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Description]"
+                      dataType="wstr"
+                      length="200"
+                      name="Description" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Amount]"
+                      dataType="wstr"
+                      length="30"
+                      name="Amount" />
+                    <externalMetadataColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output].ExternalColumns[Balance]"
+                      dataType="wstr"
+                      length="30"
+                      name="Balance" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert_to_Item_Staging.Paths[Flat File Source Output]"
+              endId="Package\Insert_to_Item_Staging\Destination - Header_Staging.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert_to_Item_Staging\Source - item_txt.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Validate"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{49466b6f-ae4d-446b-8b1e-bcaf84688e66}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Validate"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{BD374B3A-7960-4D28-ABF3-7317CDDA341D}"
+          SQLTask:SqlStatementSource="EXEC dbo.check_item" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{AFD3896B-1115-4006-A480-C9E569F05815}"
+      DTS:From="Package\Insert_To_Header_Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Validate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3477CCFF-76F5-4029-A719-F016BB6A5E17}"
+      DTS:From="Package\Clear_Item_Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Insert_to_Item_Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F397366D-A2EA-4CC8-A91F-76CE30999CBF}"
+      DTS:From="Package\Insert_to_Item_Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Validate" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{AC6CDBC8-5FFD-40B5-AF92-C27318894EFD}"
+      DTS:From="Package\Validate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Delete_header_txt" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{05312AC9-199A-420E-BB1C-14339DC5CBA4}"
+      DTS:From="Package\Validate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Delete_item_txt" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{5B394D22-1327-4AB1-A9F8-EEBD64B912BB\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{5B394D22-1327-4AB1-A9F8-EEBD64B912BB}"
+      DTS:From="Package\Clear_Header_Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{5B394D22-1327-4AB1-A9F8-EEBD64B912BB}"
+      DTS:To="Package\Insert_To_Header_Staging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190.666666666667,42"
+          Id="Package\Clear_Header_Staging"
+          TopLeft="245.5,52.5" />
+        <NodeLayout
+          Size="197.333333333334,42"
+          Id="Package\Clear_Item_Staging"
+          TopLeft="545.5,57.5" />
+        <NodeLayout
+          Size="169.333333333334,42"
+          Id="Package\Delete_header_txt"
+          TopLeft="231,499" />
+        <NodeLayout
+          Size="154.666666666667,42"
+          Id="Package\Delete_item_txt"
+          TopLeft="617,494" />
+        <NodeLayout
+          Size="210.666666666667,42"
+          Id="Package\Insert_To_Header_Staging"
+          TopLeft="237,181.5" />
+        <NodeLayout
+          Size="193.333333333334,42"
+          Id="Package\Insert_to_Item_Staging"
+          TopLeft="547,187.5" />
+        <NodeLayout
+          Size="190.666666666667,42"
+          Id="Package\Validate"
+          TopLeft="413,351.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="342.5,223.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135.5,128"
+              Start="0,0"
+              End="135.5,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,72.1619937694704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,72.1619937694704"
+                    Point2="0,76.1619937694704"
+                    Point3="4,76.1619937694704" />
+                  <mssgle:LineSegment
+                    End="131.5,76.1619937694704" />
+                  <mssgle:CubicBezierSegment
+                    Point1="131.5,76.1619937694704"
+                    Point2="135.5,76.1619937694704"
+                    Point3="135.5,80.1619937694704" />
+                  <mssgle:LineSegment
+                    End="135.5,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="643.75,99.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,88"
+              Start="0,0"
+              End="0,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="643.5,229.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-135,122"
+              Start="0,0"
+              End="-135,114.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66"
+                    Point2="0,70"
+                    Point3="-4,70" />
+                  <mssgle:LineSegment
+                    End="-131,70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-131,70"
+                    Point2="-135,70"
+                    Point3="-135,74" />
+                  <mssgle:LineSegment
+                    End="-135,114.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="478,393.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-162.5,105.5"
+              Start="0,0"
+              End="-162.5,98">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.7258566978193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38.7258566978193"
+                    Point2="0,42.7258566978193"
+                    Point3="-4,42.7258566978193" />
+                  <mssgle:LineSegment
+                    End="-158.5,42.7258566978193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-158.5,42.7258566978193"
+                    Point2="-162.5,42.7258566978193"
+                    Point3="-162.5,46.7258566978193" />
+                  <mssgle:LineSegment
+                    End="-162.5,98" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="539,393.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="155.5,100.5"
+              Start="0,0"
+              End="155.5,93">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7009345794393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.7009345794393"
+                    Point2="0,40.7009345794393"
+                    Point3="4,40.7009345794393" />
+                  <mssgle:LineSegment
+                    End="151.5,40.7009345794393" />
+                  <mssgle:CubicBezierSegment
+                    Point1="151.5,40.7009345794393"
+                    Point2="155.5,40.7009345794393"
+                    Point3="155.5,44.7009345794393" />
+                  <mssgle:LineSegment
+                    End="155.5,93" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[{5B394D22-1327-4AB1-A9F8-EEBD64B912BB\}]"
+          TopLeft="341.75,94.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,87"
+              Start="0,0"
+              End="0,79.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,79.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert_To_Header_Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="174.666666666667,42"
+          Id="Package\Insert_To_Header_Staging\Source - header_txt"
+          TopLeft="29.5,5.5" />
+        <NodeLayout
+          Size="222.666666666667,42"
+          Id="Package\Insert_To_Header_Staging\Destination - Header_Staging"
+          TopLeft="5.50000000000001,107.5" />
+        <EdgeLayout
+          Id="Package\Insert_To_Header_Staging.Paths[Flat File Source Output]"
+          TopLeft="117,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Insert_to_Item_Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="222.666666666667,42"
+          Id="Package\Insert_to_Item_Staging\Destination - Header_Staging"
+          TopLeft="5.50000000000001,107.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Insert_to_Item_Staging\Source - item_txt"
+          TopLeft="29.5,5.5" />
+        <EdgeLayout
+          Id="Package\Insert_to_Item_Staging.Paths[Flat File Source Output]"
+          TopLeft="113.75,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert_to_Item_Staging\Destination - Header_Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
